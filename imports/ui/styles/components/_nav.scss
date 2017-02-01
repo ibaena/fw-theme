@@ -4,9 +4,10 @@
 #nav {
     background: transparent;
     border: none;
-    margin-top: 5px;
-    padding:30px;
-}
+    padding-bottom: 30px;
+    padding-top: 30px;
+    height: 75px;
+  }
 
 .navbar-header {
     position: absolute;
@@ -18,7 +19,7 @@
     right: 11vw;
 }
 .navbar-brand {
-  font-size: calc(3vw + 2px);
+  font-size: calc(2vw + 4px);
   color:white !important;
 }
 .nav-list-item {

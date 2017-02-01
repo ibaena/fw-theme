@@ -15,21 +15,24 @@ export default class Nav extends Component {
       if (currentScroll > headerOrgOffset) {
         if (currentScroll > previousScroll) {
         // Say the menu height is 100px
-          $('#nav').animate({top: '-10px'},300);
+
           $('#nav').css({
             "background-color": "lightblue",
-            'padding':'15px',
-            "transition": 'background-color .3s ease-in',
-            "transition": 'padding .3s ease-in',
-          }, 300)
+            'padding-top':'0px',
+            'padding-bottom':'0px',
+            'height':'55px',
+            "transition": 'all .3s ease-in',
+
+          }, 300);
         } else {
-          $('#nav').animate({top: '10px'}, 100);
+
           $('#nav').css({
             "background-color": "transparent",
-            'padding':'30px',
-            "transition": 'background-color .2s ease-in',
-            "transition": 'padding .2s ease-in'
-        }, 100)
+            'height':'75px',
+            'padding-top':'30px',
+            'padding-bottom':'30px',
+            "transition": 'all .3s ease-in',
+        }, 100);
       }
 }
 previousScroll = currentScroll;
