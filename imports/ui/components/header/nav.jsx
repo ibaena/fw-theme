@@ -12,9 +12,7 @@ export default class Nav extends Component {
     headerOrgOffset = $('#nav').height() +40;
     $(window).scroll(function () {
       var currentScroll = $(this).scrollTop();
-      console.log(headerOrgOffset);
       if (currentScroll > headerOrgOffset) {
-
           $('#nav').css({
             "background-color": "lightblue",
             'padding-top':'0px',
