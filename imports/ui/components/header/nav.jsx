@@ -17,7 +17,7 @@ export default class Nav extends Component {
         // Say the menu height is 100px
           $('#nav').animate({top: '-10px'},300);
           $('#nav').css({
-            "background-color": "yellow",
+            "background-color": "lightblue",
             'padding':'15px',
             "transition": 'background-color .3s ease-in',
             "transition": 'padding .3s ease-in',
