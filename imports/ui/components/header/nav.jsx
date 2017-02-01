@@ -9,12 +9,11 @@ export default class Nav extends Component {
   }
   componentDidMount(){
     var previousScroll = 0;
-    headerOrgOffset = $('#nav').height()
+    headerOrgOffset = $('#nav').height() +40;
     $(window).scroll(function () {
       var currentScroll = $(this).scrollTop();
+      console.log(headerOrgOffset);
       if (currentScroll > headerOrgOffset) {
-        if (currentScroll > previousScroll) {
-        // Say the menu height is 100px
 
           $('#nav').css({
             "background-color": "lightblue",
@@ -25,7 +24,6 @@ export default class Nav extends Component {
 
           }, 300);
         } else {
-
           $('#nav').css({
             "background-color": "transparent",
             'height':'75px',
@@ -34,9 +32,7 @@ export default class Nav extends Component {
             "transition": 'all .3s ease-in',
         }, 100);
       }
-}
-previousScroll = currentScroll;
-});
+    });
   }
 
   render() {
