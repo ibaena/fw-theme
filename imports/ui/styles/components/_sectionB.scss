@@ -1,0 +1,26 @@
+/******************
+  sectionB Styles
+*******************/
+
+#sectionB {
+    background: darkgrey;
+    height: 55vh;
+    width: 100%;
+    text-align: center;
+
+    .container {
+        position: absolute;
+    }
+}
+
+#sectionB-break {
+    width: 20%;
+    border-color: blue;
+}
+#sectionB-3col-wrapper {
+
+}
+
+.three-col-content {
+  margin-top: 40px;
+}

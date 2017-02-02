@@ -1,12 +1,18 @@
 /*********************
     SectionA Styles
 *********************/
-
 #sectionA {
-  background: green;
-  height: 40vh;
-  width: 100%;
-  .container {
-    position:absolute;
-  }
+    background: white;
+    height: 45vh;
+    width: 100%;
+    text-align: center;
+
+    .container {
+        position: absolute;
+    }
+}
+
+#sectionA-break {
+    width: 20%;
+    border-color: blue;
 }
