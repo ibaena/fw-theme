@@ -1,9 +1,9 @@
 /*********************
     SectionA Styles
 *********************/
-#sectionA {
-    background: white;
-    height: 40vh;
+#sectionC {
+    background: #1e4ebf;
+    height: 94vh;
     width: 100%;
     text-align: center;
 
@@ -12,11 +12,14 @@
     }
 }
 
-#sectionA-break {
+#sectionC-break {
     width: 20%;
-    border-color: blue;
+    border-color: white;
 }
 
 .section-title {
     font-size: calc(3.5vw + 5px);
+}
+#sectionC-content {
+  color:white;
 }

@@ -44,15 +44,15 @@ export default class Nav extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#">Player Name</a>
+              <a className="navbar-brand" href="#">Expecto Patronum</a>
             </div>
 
             <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav" id="left-list">
-                <li className="nav-list-item"><a href="#">Link</a></li>
-                <li className="nav-list-item"><a href="#">Link</a></li>
-                <li className="nav-list-item"><a href="#">Link</a></li>
-                <li className="nav-list-item"><a href="#">Link</a></li>
+                <li className="nav-list-item"><a href="#">Accio</a></li>
+                <li className="nav-list-item"><a href="#">Imperio</a></li>
+                <li className="nav-list-item"><a href="#">Crucio</a></li>
+                <li className="nav-list-item"><a href="#">Lumos</a></li>
               </ul>
             </div>
           </div>
