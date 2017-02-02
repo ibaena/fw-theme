@@ -1,35 +1,74 @@
 import React, { Component } from 'react';
+import Map from 'react-minimal-google-maps'
+
 
 // Intro component
 export default class SectionC extends Component {
   // Note: In ES6, constructor() === componentWillMount() in React ES5
   constructor() {
     super();
+    this.state = {
+      API: {},
+      markers: [
+        {
+          position: {lat: 41.1798, lng: -75.4179},
+          title: 'Hello World!',
+          defaultAnimation: 2
+        },
+      ]
+    };
 
+    this.centerToAddress = this.centerToAddress.bind(this);
+    this.handleLoadUpdate = this.handleLoadUpdate.bind(this);
   }
+
+  centerToAddress(event){
+    // Be sure that API loaded properly
+    if(this.state.API.isLoaded && ((event.which === 13) || typeof event === 'undefined')) {
+      // Simply use object from Google Maps API
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({'address': this.refs.searchCityInput.value}, (results, status) => {
+        console.log(this.state.address);
+        if (status === google.maps.GeocoderStatus.OK) {
+          this.state.API.map.setCenter(results[0].geometry.location);
+        } else {
+          console.warn('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+  }
+
+  handleLoadUpdate(result){
+       this.setState({
+         API: {
+           isLoaded: result.isLoaded,
+           map: result.map
+         }
+       });
+       // we can load some objects from google API here
+       console.log("API loaded - parent component");
+  }
+
   componentDidMount(){
-    $(window).resize(function(){
-       $('#sectionC-content').css({
-          position:'absolute',
-          left: ($(window).width() - $('#sectionC-content').outerWidth())/2,
-          top: ($('#sectionC').height() - $('#sectionC-content').outerHeight())/2
-        });
-    });
-  // To initially run the function:
-    $(window).resize();
+
   }
 
   render() {
     return (
       <div id="sectionC" >
-        <div className="container">
-          <div className="col-md-12" id="sectionC-content">
+        <div className="container" id="vertical-center">
+          <div className="col-md-6" id="sectionC-content">
             <h2 className="text-center section-title">Expecto Patronum</h2>
             <hr id="sectionC-break" />
-
-            <p className="text-center">
-              Red hair crookshanks bludger Marauder’s Map Prongs sunshine daisies butter mellow Ludo Bagman. Beaters gobbledegook N.E.W.T., Honeydukes eriseD inferi Wormtail. Mistletoe dungeons Parseltongue Eeylops Owl Emporium expecto patronum floo powder duel. Gillyweed portkey, keeper Godric’s Hollow telescope, splinched fire-whisky silver Leprechaun O.W.L. stroke the spine. Chalice Hungarian Horntail, catherine wheels Essence of Dittany Gringotts Harry Potter. Prophecies Yaxley green eyes Remembrall horcrux hand of the servant. Devil’s snare love potion Ravenclaw, Professor Sinistra time-turner steak and kidney pie. Cabbage Daily Prophet letters from no one Dervish and Banges leg.
-            </p>
+          </div>
+          <div className="col-md-6" id="sectionC-map">
+          <Map
+            initialZoom={12}
+            initialCordinates={{lat: 41.1798, lng: -75.4179}}
+            markers={this.state.markers}
+            styles={{height: "500px"}}
+            updateLoadState={this.handleLoadUpdate}
+          />
           </div>
         </div>
       </div>
