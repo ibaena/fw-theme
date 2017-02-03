@@ -1,0 +1,51 @@
+import React, { Component } from 'react';
+import unslider from 'jquery-unslider';
+import $ from "jquery";
+
+// Intro component
+export default class Slider extends Component {
+  // Note: In ES6, constructor() === componentWillMount() in React ES5
+  constructor() {
+    super();
+
+  }
+  componentDidMount(){
+
+   $(window).resize(function(){
+      $('#slider-content').css({
+         position:'absolute',
+         left: ($(window).width() - $('#slider-content').outerWidth())/2,
+         top: ($('#slider').height() - $('#slider-content').outerHeight())/2
+       });
+   });
+ // To initially run the function:
+   $(window).resize();
+
+   $('#slides').unslider({
+     animation: 'vertical',
+     autoplay: true,
+     infinite: true,
+     arrows: false
+   });
+  }
+
+  render() {
+    return (
+      <div id="slider" >
+        <div className="container">
+          <div className="col-md-12" id="slider-content">
+            <div id="slides" className="slider-nav">
+              <ul>
+              <li><img src="http://loremflickr.com/1000/600/nasa" /></li>
+              <li><img src="http://loremflickr.com/1000/600/dog" /></li>
+              <li><img src="http://loremflickr.com/1000/600/paris,girl/all" /></li>
+              <li><img src="http://loremflickr.com/1000/600/brazil,rio" /></li>
+              <li><img src="http://loremflickr.com/1000/600/hoboken" /></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
