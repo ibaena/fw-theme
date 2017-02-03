@@ -57,11 +57,12 @@ export default class SectionC extends Component {
     return (
       <div id="sectionC" >
         <div className="container" id="vertical-center">
-          <div className="col-md-6" id="sectionC-content">
-            <h2 className="text-center section-title">Expecto Patronum</h2>
+          <div className="col-md-5" id="sectionC-content">
+            <h2 className="text-center sectionC-title">Expelliarmus!</h2>
             <hr id="sectionC-break" />
+            <p className="sectionC-text">Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter.</p>
           </div>
-          <div className="col-md-6" id="sectionC-map">
+          <div className="col-md-6 col-md-offset-1" id="sectionC-map">
           <Map
             initialZoom={12}
             initialCordinates={{lat: 41.1798, lng: -75.4179}}

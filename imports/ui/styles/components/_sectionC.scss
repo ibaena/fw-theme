@@ -2,10 +2,9 @@
     SectionC Styles
 *********************/
 #sectionC {
-    background: #1e4ebf;
+    background: #031642;
     height: 94vh;
     width: 100%;
-    text-align: center;
 
     .container {
       position: relative;
@@ -19,12 +18,18 @@
     border-color: white;
 }
 
-.section-title {
-    font-size: calc(3.5vw + 5px);
+.sectionC-title {
+    font-size: calc(3vw + 5px);
 }
 #sectionC-content {
   color:white;
 }
 #map {
   height: 100%;
+}
+.sectionC-text {
+  margin-top: 50px;
+  font-size: calc(1vw + 5px);
+  font-weight: 300;
+  text-align: justify;
 }
