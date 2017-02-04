@@ -8,7 +8,9 @@ export default class SectionC extends Component {
   constructor() {
     super();
     this.state = {
-      API: {},
+      API: {
+        key:'AIzaSyDiQNbCXSfsaF4Q25syJVng-QtUqMiFUWY'
+      },
       markers: [
         {
           position: {lat: 41.1798, lng: -75.4179},
