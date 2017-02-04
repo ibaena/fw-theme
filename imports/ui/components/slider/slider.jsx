@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import unslider from 'jquery-unslider';
-import $ from "jquery";
 
 // Intro component
 export default class Slider extends Component {
@@ -10,6 +8,21 @@ export default class Slider extends Component {
 
   }
   componentDidMount(){
+    $('.image-popup-no-margins').magnificPopup({
+      type: 'image',
+      closeOnContentClick: true,
+      closeBtnInside: false,
+      fixedContentPos: true,
+      mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+      image: {
+        verticalFit: true
+      },
+      zoom: {
+        enabled: true,
+        duration: 300 // don't foget to change the duration also in CSS
+      }
+    });
+
   }
 
   getSquares() {
@@ -31,15 +44,19 @@ export default class Slider extends Component {
 
   renderSquares() {
     return this.getSquares().map((item) => (
-      <div className="col-md-3 quilt-squares" key={item._id}>
-        <img src={item.image} className="img-responsive" />
+      <div className="col-md-3 quilt-squares " key={item._id}>
+        <a className="lightshow image-popup-no-margins" href={item.image} >
+          <img src={item.image} className="img-responsive" />
+        </a>
       </div>
     ))
   }
   renderSquares2() {
     return this.getSquares().map((item) => (
       <div className="col-md-3 quilt-squares-b" key={item._id}>
-        <img src={item.src} className="img-responsive" />
+        <a data-lightbox={"image-"+item._id} >
+          <img src={item.src} className="img-responsive" />
+        </a>
       </div>
     ))
   }
