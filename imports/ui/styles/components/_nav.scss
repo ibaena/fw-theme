@@ -20,7 +20,7 @@
 }
 .navbar-brand {
   font-size: calc(2vw + 4px);
-  color:black !important;
+  color:white !important;
 }
 .navbar-brand:hover {
   color:lightgray !important;
@@ -30,11 +30,16 @@
   margin-left: 1vw;
   margin-right: 1vw;
 
-  a {
-    color:black !important;
+  .white-menu {
+    color:white !important;
   }
-  a:hover {
+  .white-menu:hover {
     color:lightgray !important;
     transition: color .2s ease-in;
   }
+}
+
+.black-nav {
+  color: black !important;
+  transition: color .3s ease-in;
 }

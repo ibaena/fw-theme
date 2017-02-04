@@ -21,6 +21,8 @@ export default class Nav extends Component {
             "transition": 'all .3s ease-in',
 
           }, 300);
+          $('.navbar-brand').addClass('black-nav');
+          $('.menu-links').removeClass('white-menu').addClass('black-nav');
         } else {
           $('#nav').css({
             "background-color": "transparent",
@@ -29,6 +31,18 @@ export default class Nav extends Component {
             'padding-bottom':'30px',
             "transition": 'all .3s ease-in',
         }, 100);
+        $('.navbar-brand').removeClass('black-nav');
+        $('.menu-links').removeClass('black-nav').addClass('white-menu');
+      }
+    });
+
+    $('a[href^="#"]').on('click', function(event) {
+      let target = $(this.getAttribute('href'));
+      if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
       }
     });
   }
@@ -44,15 +58,15 @@ export default class Nav extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#">Expecto Patronum</a>
+              <a className="navbar-brand" href="#header">Expecto Patronum</a>
             </div>
 
             <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav" id="left-list">
-                <li className="nav-list-item"><a href="#">Accio</a></li>
-                <li className="nav-list-item"><a href="#">Imperio</a></li>
-                <li className="nav-list-item"><a href="#">Crucio</a></li>
-                <li className="nav-list-item"><a href="#">Lumos</a></li>
+                <li className="nav-list-item"><a href="#sectionA" className="menu-links white-menu">Accio</a></li>
+                <li className="nav-list-item"><a href="#sectionB" className="menu-links white-menu">Imperio</a></li>
+                <li className="nav-list-item"><a href="#slider" className="menu-links white-menu">Crucio</a></li>
+                <li className="nav-list-item"><a href="#sectionC" className="menu-links white-menu">Lumos</a></li>
               </ul>
             </div>
           </div>
